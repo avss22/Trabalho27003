@@ -1,0 +1,34 @@
+
+class Evento {
+    private String titulo;
+    private String descricao;
+    private String dataInicio;
+    private String dataFim;
+    private String localizacao;
+    private List<String> participantes;
+
+    public Evento(String titulo, String descricao, String dataInicio, String dataFim, String localizacao) {
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.dataInicio = dataInicio;
+        this.dataFim = dataFim;
+        this.localizacao = localizacao;
+        this.participantes = new ArrayList<>();
+    }
+
+    public void adicionarParticipante(String participante) {
+        participantes.add(participante);
+    }
+
+    public void removerParticipante(String participante) {
+        participantes.remove(participante);
+    }
+
+    public void imprimirParticipantes() {
+        System.out.println("Participantes do evento '" + titulo + "':");
+        for (String participante : participantes) {
+            System.out.println(participante);
+        }
+    }
+}
+
